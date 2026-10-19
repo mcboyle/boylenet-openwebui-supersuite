@@ -1,0 +1,48 @@
+{
+  "bd_kb_auto_grounding_pipeline": {
+    "priority": 10,
+    "enable_inlet_grounding": false,
+    "top_k_chunks": 3,
+    "append_citation_footer": false,
+    "qdrant_collection": "bd_master_kb"
+  },
+  "bd_smart_o1740_intent_router_pipeline": {
+    "coding_model": "local/tier1-qwen3-coder-30b-a3b",
+    "security_model": "local/cyberstrike-35b",
+    "reasoning_model": "local/qwen3.6-35b-claude-opus-abliterated",
+    "fast_chat_model": "local/qwythos-9b",
+    "include_bd_kb_context": true,
+    "show_routing_header": true
+  },
+  "bd_deep_research_multi_engine_pipeline": {
+    "max_web_results": 5,
+    "max_arxiv_papers": 3,
+    "max_bdkb_chunks": 4,
+    "synthesis_model": "local/qwythos-9b"
+  },
+  "bd_4model_consensus_council_pipeline": {
+    "council_size": 4,
+    "include_benchmark_weights": true,
+    "judge_mode": "weighted_consensus"
+  },
+  "bd_airgap_and_rule22_shield_pipeline": {
+    "priority": 5,
+    "block_destructive_git_in_prompt": false,
+    "verify_airgap_status": true
+  },
+  "bd_code_quality_ruff_mypy_pytest_pipeline": {
+    "priority": 50,
+    "auto_verify_python_blocks": false,
+    "append_qa_badge": false
+  },
+  "bd_multimodal_flux_vision_voice_pipeline": {
+    "default_image_resolution": "1024x1024",
+    "also_synthesize_voice_summary": true,
+    "default_voice": "alloy"
+  },
+  "bd_token_telemetry_langfuse_pipeline": {
+    "priority": 90,
+    "append_telemetry_footer": false,
+    "log_to_episodic_memory": true
+  }
+}
